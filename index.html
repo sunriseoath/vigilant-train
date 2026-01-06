@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timeback Dungeon</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <div>
+          <h1>Timeback Dungeon</h1>
+          <p class="app__subtitle">Traverse backwards through the dungeon timeline.</p>
+        </div>
+        <div class="mode-toggle">
+          <label>
+            <input type="radio" name="mode" value="untimed" checked />
+            Untimed
+          </label>
+          <label>
+            <input type="radio" name="mode" value="timed" />
+            Timed
+          </label>
+          <button id="start-run">Start Run</button>
+        </div>
+      </header>
+
+      <section class="hud">
+        <div class="hud__item">Layer: <span id="hud-layer">0</span></div>
+        <div class="hud__item">Coins: <span id="hud-coins">0</span></div>
+        <div class="hud__item">Time: <span id="hud-time">0</span>s</div>
+        <div class="hud__item">Score: <span id="hud-score">0</span></div>
+      </section>
+
+      <section class="stage">
+        <div class="stage__hint">Click connected nodes to move. Reach the orange exit to add a new day.</div>
+        <canvas id="dungeon-canvas" width="960" height="540"></canvas>
+      </section>
+
+      <section class="log">
+        <h2>Run Log</h2>
+        <ol id="run-log"></ol>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
